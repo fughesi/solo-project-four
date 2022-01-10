@@ -1,0 +1,58 @@
+:root {
+  --step-neg1: clamp(1.35rem, 1.3rem + 0.24vw, 1.47rem);
+  --step-0: clamp(1.44rem, 1.07rem + 1.83vw, 2.38rem);
+  --step-1: clamp(1.53rem, 0.63rem + 4.5vw, 3.84rem);
+  --step-2: clamp(1.64rem, -0.15rem + 8.94vw, 6.22rem);
+}
+
+#homeContainer {
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template: repeat(3, 1fr) / 1fr;
+  grid-template-areas:
+    "a"
+    "b"
+    "c";
+}
+#text {
+  grid-area: b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#text h1 {
+  margin-bottom: 0;
+  text-align: center;
+  font-size: var(--step-2);
+}
+#text p {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: var(--step-0);
+}
+#text button {
+  padding: 1.5em 1.2em;
+
+  border-radius: 17px;
+  font-size: var(--step-neg1);
+  text-align: center;
+}
+#topBlob {
+  grid-area: a;
+  height: 200px;
+  width: 200px;
+
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background-color: greenyellow;
+}
+#bottomBlob {
+  grid-area: c;
+  height: 200px;
+  width: 200px;
+
+  border-radius: 36% 64% 70% 30% / 20% 67% 33% 80%;
+  background-color: green;
+}
