@@ -1,4 +1,13 @@
+#questionsContainer {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  place-items: center;
+}
+#loading {
+  color: red;
+}
+
 h1 {
-    font-size: 4rem;
-    
+  font-size: 4rem;
 }

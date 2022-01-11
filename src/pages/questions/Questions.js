@@ -1,5 +1,5 @@
 import React from "react";
-import questionElement from "../../components/questionElement";
+import QuestionElement from "../../components/questionElement/QuestionElement";
 import "./Questions.css";
 
 export default function Questions() {
@@ -24,23 +24,22 @@ export default function Questions() {
 
   console.log(questions.results[0].question);
 
-
   // make a map of elements from API --- not working!!!
-  function arrayOfQuestions() {
-    const i = questions.results;
-    return (i) =>
-      i.map((x) => {
-        return [<h3>{x.question}</h3>];
-      });
-  }
-
-  // if (questions) return {
-  //   <h1>{questions.results[1].difficulty}</h1>;
+  const questionObject = questions.results.map((i) => {
+    return (
+      <QuestionElement
+        question={i.question}
+        correct={i.correct_answer}
+        incorrect={i.incorrect_answers}
+      />
+    );
+  });
+  console.log(questionObject);
 
   return (
     <div id="questionsContainer">
       <h1>Why is this not working? </h1>
-      {questions ? arrayOfQuestions() : loading}
+     {questionObject}
     </div>
   );
 }
