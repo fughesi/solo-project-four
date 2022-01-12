@@ -1,0 +1,33 @@
+#qElContainer {
+  display: flex;
+  flex-direction: column;
+
+  width: 60%;
+  justify-content: center;
+}
+h3 {
+    margin: 5px 0 21px 0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+#answerContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: auto;
+}
+#answerContainer li {
+  flex-grow: 2;
+
+  text-align: center;
+  list-style-type: none;
+  margin: auto .75em;
+  padding: 1em 1.25em;
+  background-color: #ddd;
+  border-radius: 1.3em;
+}
+#answerContainer ul {
+  font-size: 2.5rem;
+}
+#answerContainer li .select {
+    background: blue;
+}

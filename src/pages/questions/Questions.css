@@ -1,13 +1,18 @@
 #questionsContainer {
   display: grid;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   place-items: center;
 }
 #loading {
   color: red;
 }
-
+#questionsContainer button {
+  margin: 1.5em 0 0 0;
+  font-size: 2rem;
+  padding: 0.5em 0.75em;
+  border-radius: 0.5em;
+}
 h1 {
   font-size: 4rem;
 }

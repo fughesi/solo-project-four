@@ -1,10 +1,12 @@
 import React from "react";
 import QuestionElement from "../../components/questionElement/QuestionElement";
 import "./Questions.css";
+import { nanoid } from "nanoid";
 
 export default function Questions() {
   // state variables
   const [questions, setQuestions] = React.useState([]);
+  const [isSelected, setIsSelected] = React.useState(true);
   const [error, setError] = React.useState();
   const [loading, setLoading] = React.useState(true);
 
@@ -22,24 +24,33 @@ export default function Questions() {
   // loading text
   if (loading) return <h1 id="loading">LOADING...</h1>;
 
-  console.log(questions.results[0].question);
+  // selects the answer the user picks
+  function userSelect() {
+    setIsSelected((i) => !i);
+    console.log("works")
+  }
 
-  // make a map of elements from API --- not working!!!
+  // make a map of elements from API
   const questionObject = questions.results.map((i) => {
     return (
       <QuestionElement
+        key={nanoid()}
+        id={nanoid()}
+        select={userSelect}
+        isSelected={isSelected}
         question={i.question}
         correct={i.correct_answer}
         incorrect={i.incorrect_answers}
+        type={i.type}
       />
     );
   });
-  console.log(questionObject);
 
   return (
     <div id="questionsContainer">
-      <h1>Why is this not working? </h1>
-     {questionObject}
+      <h1>Take the quiz!</h1>
+      {questionObject}
+      <button>check answers</button>
     </div>
   );
 }
